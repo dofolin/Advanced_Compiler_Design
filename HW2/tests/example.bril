@@ -1,0 +1,48 @@
+# Example from the Fig. 9.13 in the book "Engineering a Compiler"
+@main {
+
+.b0:
+    i: int = const 1;
+
+.b1:
+    a: int = const 2;
+    c: int = const 3;
+    cond: bool = eq a c;
+    br cond .b2 .b5;
+
+.b2:
+    b: int = const 4;
+    c: int = const 5;
+    d: int = const 6;
+    jmp .b3;
+
+.b3:
+    y: int = add a b;
+    z: int = add c d;
+    one: int = const 1;
+    i: int = add i one;
+    hundred: int = const 100;
+    cond2: bool = lt i hundred;
+    br cond2 .b1 .b4;
+
+.b4:
+    ret;
+
+.b5:
+    a: int = const 1;
+    d: int = const 2;
+    cond3: bool = eq a d;
+    br cond3 .b6 .b8;
+
+.b6:
+    d: int = const 3;
+    jmp .b7;
+
+.b7:
+    b: int = const 4;
+    jmp .b3;
+
+.b8:
+    c: int = const 5;
+    jmp .b7;
+}

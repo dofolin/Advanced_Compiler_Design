@@ -1,0 +1,9 @@
+[envs.original]
+command = "clang {filename} -o {base}-original.bin && ./{base}-original.bin; echo $?"
+output."original.out" = "-"
+output."original.err" = "2"
+
+[envs.dc-analysis]
+command = "(cd build && cmake ..) && make -C build DCA && clang -fpass-plugin=build/pass/DCA.so {filename} -o {base}-dc-analysis.bin; ./{base}-dc-analysis.bin; echo $?"
+output."dc_analysis.out" = "-"
+output."dc_analysis.err" = "2"
