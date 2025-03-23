@@ -4,3 +4,6 @@
 [submodule "HW2/bril"]
 	path = HW2/bril
 	url = https://github.com/sampsyo/bril.git
+[submodule "HW3/bril"]
+	path = HW3/bril
+	url = https://github.com/sampsyo/bril.git
