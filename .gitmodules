@@ -1,0 +1,3 @@
+[submodule "HW0/bril"]
+	path = HW0/bril
+	url = https://github.com/sampsyo/bril.git
